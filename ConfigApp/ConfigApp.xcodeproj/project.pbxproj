@@ -19,6 +19,7 @@
 		2736B62518BBE2B9005541AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2736B60D18BBE2B9005541AF /* UIKit.framework */; };
 		2736B62D18BBE2B9005541AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2736B62B18BBE2B9005541AF /* InfoPlist.strings */; };
 		2736B62F18BBE2B9005541AF /* ConfigAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736B62E18BBE2B9005541AF /* ConfigAppTests.m */; };
+		2736B64A18BBE81E005541AF /* DRYShowConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736B64918BBE81E005541AF /* DRYShowConfigurationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		2736B63D18BBE572005541AF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		2736B63F18BBE572005541AF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		2736B64118BBE572005541AF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		2736B64818BBE81E005541AF /* DRYShowConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRYShowConfigurationViewController.h; path = Controllers/DRYShowConfigurationViewController.h; sourceTree = "<group>"; };
+		2736B64918BBE81E005541AF /* DRYShowConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRYShowConfigurationViewController.m; path = Controllers/DRYShowConfigurationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 		2736B60F18BBE2B9005541AF /* ConfigApp */ = {
 			isa = PBXGroup;
 			children = (
+				2736B64718BBE7D6005541AF /* Controllers */,
 				2736B61818BBE2B9005541AF /* DRYAppDelegate.h */,
 				2736B61918BBE2B9005541AF /* DRYAppDelegate.m */,
 				2736B61B18BBE2B9005541AF /* Images.xcassets */,
@@ -180,6 +184,15 @@
 				2736B64118BBE572005541AF /* Configuration.plist */,
 			);
 			path = Release;
+			sourceTree = "<group>";
+		};
+		2736B64718BBE7D6005541AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2736B64818BBE81E005541AF /* DRYShowConfigurationViewController.h */,
+				2736B64918BBE81E005541AF /* DRYShowConfigurationViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2736B64A18BBE81E005541AF /* DRYShowConfigurationViewController.m in Sources */,
 				2736B61A18BBE2B9005541AF /* DRYAppDelegate.m in Sources */,
 				2736B61618BBE2B9005541AF /* main.m in Sources */,
 			);
