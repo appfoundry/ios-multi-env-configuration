@@ -48,6 +48,9 @@
 		2736B62A18BBE2B9005541AF /* ConfigAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ConfigAppTests-Info.plist"; sourceTree = "<group>"; };
 		2736B62C18BBE2B9005541AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2736B62E18BBE2B9005541AF /* ConfigAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigAppTests.m; sourceTree = "<group>"; };
+		2736B63D18BBE572005541AF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		2736B63F18BBE572005541AF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		2736B64118BBE572005541AF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 		2736B61018BBE2B9005541AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2736B63B18BBE572005541AF /* config */,
 				2736B61118BBE2B9005541AF /* ConfigApp-Info.plist */,
 				2736B61218BBE2B9005541AF /* InfoPlist.strings */,
 				2736B61518BBE2B9005541AF /* main.m */,
@@ -144,6 +148,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2736B63B18BBE572005541AF /* config */ = {
+			isa = PBXGroup;
+			children = (
+				2736B63C18BBE572005541AF /* AdHoc */,
+				2736B63E18BBE572005541AF /* Debug */,
+				2736B64018BBE572005541AF /* Release */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		2736B63C18BBE572005541AF /* AdHoc */ = {
+			isa = PBXGroup;
+			children = (
+				2736B63D18BBE572005541AF /* Configuration.plist */,
+			);
+			path = AdHoc;
+			sourceTree = "<group>";
+		};
+		2736B63E18BBE572005541AF /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				2736B63F18BBE572005541AF /* Configuration.plist */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		2736B64018BBE572005541AF /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				2736B64118BBE572005541AF /* Configuration.plist */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +192,7 @@
 				2736B60218BBE2B9005541AF /* Sources */,
 				2736B60318BBE2B9005541AF /* Frameworks */,
 				2736B60418BBE2B9005541AF /* Resources */,
+				2736B64618BBE654005541AF /* Copy Configuration File(s) */,
 			);
 			buildRules = (
 			);
@@ -234,6 +273,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2736B64618BBE654005541AF /* Copy Configuration File(s) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Configuration File(s)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "RESOURCE_PATH=$SRCROOT/ConfigApp/config/$CONFIGURATION\n\nBUILD_APP_DIR=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\n\necho \"Copying all files under $RESOURCE_PATH to $BUILD_APP_DIR\"\ncp -v $RESOURCE_PATH/* \"$BUILD_APP_DIR/\"\n                     \n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2736B60218BBE2B9005541AF /* Sources */ = {
