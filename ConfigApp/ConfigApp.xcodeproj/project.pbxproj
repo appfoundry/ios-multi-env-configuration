@@ -429,7 +429,7 @@
 		2736B63318BBE2B9005541AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-${CONFIGURATION}";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CustomAppBundleId = "be.appfoundry.example.${PRODUCT_NAME:rfc1034identifier}.${CONFIGURATION}";
 				CustomProductName = "ConApp DE";
@@ -444,7 +444,7 @@
 		2736B63418BBE2B9005541AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-${CONFIGURATION}";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CustomAppBundleId = "be.appfoundry.example.${PRODUCT_NAME:rfc1034identifier}";
 				CustomProductName = "${PRODUCT_NAME}";
@@ -534,7 +534,7 @@
 		2736B63918BBE3F6005541AF /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-${CONFIGURATION}";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CustomAppBundleId = "be.appfoundry.example.${PRODUCT_NAME:rfc1034identifier}.${CONFIGURATION}";
 				CustomProductName = "ConApp AH";
