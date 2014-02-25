@@ -435,6 +435,11 @@
 				CustomProductName = "ConApp DE";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConfigApp/ConfigApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"CONFIGURATION_${CONFIGURATION}",
+				);
 				INFOPLIST_FILE = "ConfigApp/ConfigApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -450,6 +455,7 @@
 				CustomProductName = "${PRODUCT_NAME}";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConfigApp/ConfigApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_${CONFIGURATION}";
 				INFOPLIST_FILE = "ConfigApp/ConfigApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -540,6 +546,7 @@
 				CustomProductName = "ConApp AH";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConfigApp/ConfigApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "CONFIGURATION_${CONFIGURATION}";
 				INFOPLIST_FILE = "ConfigApp/ConfigApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

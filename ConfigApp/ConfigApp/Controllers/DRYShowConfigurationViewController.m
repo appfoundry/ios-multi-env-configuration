@@ -51,6 +51,10 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[bundleIdLabel]-|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[valueFromConfigurationFileLabel]-[appVersionLabel]-[bundleIdLabel]-|" options:0 metrics:nil views:views]];
     
+#if defined (CONFIGURATION_AdHoc) || defined (CONFIGURATION_Debug)
+    self.view.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.5];
+#endif
+    
 }
     
 - (UILabel *) createInfoLabel {
