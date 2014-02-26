@@ -111,7 +111,7 @@ NSString *bundleVersion = infoDictionary[@"CFBundleVersion"];
 ```
 
 ## Releasing/Building different versions of your app
-While having your configuration separated per environment is nice, what is really helpful is to have the ability to have multiple versions on your devices at the same time. For instance, it is handy if you can have the AppStore version, the nightly released AdHoc distribution and you latest development version next to each other. Especially when it comes to reproducing bugs, this is a welcome setup.
+While having your configuration separated per environment is nice, what is really helpful is to have the ability to have multiple versions on your devices at the same time. For instance, it is handy if you can have the AppStore version, the nightly released AdHoc distribution and your latest development version next to each other. Especially when it comes to reproducing bugs, this is a welcome setup.
 
 Since having the same App ID for each environment results in overwriting the currently installed app, we will need a different App ID per environment. This is where **User-Defined** settings come in.
 
@@ -133,12 +133,12 @@ com.yourcompany.${PRODUCT_NAME:rfc1034identifier}
 
 Xcode will resolve the used variables right away and show you the actual values in real time. As you can see, we use a configuration suffix for both **Debug** and **AdHoc** releases, but not for **Release**. We like this setup, because if you need to create these separate App IDs because you need to use specific entitlements such as push notifications, the different App IDs are easy to recognise.
 
-Now we just need to set this user setting as bundle id. You do this in your application's info.plist file, typically named after your product like so: <YourProductName>-Info.plist. By default it resides under the **Supporting Files** group. Go ahead and open up the file. Now locate the **Bundle identifier** key and change it's value to your user defined setting: **${CustomAppBundleId}**
+Now we just need to set this user setting as bundle id. You do this in your application's info.plist file, typically named after your product like so: <YourProductName>-Info.plist. By default it resides under the **Supporting Files** group. Go ahead and open up the file. Now locate the **Bundle identifier** key and change its value to your user defined setting: **${CustomAppBundleId}**
 
 With this setup, you will now be able to install multiple versions of your app next to each other. Although this is nice, it will be difficult to distinguish one version from the other, since all versions still have the same name and icon. Let's continue our quest and change the name and icon for our different environments.
 
 ## Giving each environment app version its proper name
-The first step to enable a specific name per environment is again adding a **User-Defined** setting. So go ahead and create a new user defined setting. Call it for instance ***CustomProductName***. Now for each configuration set a specific name. In our example app we did the following:
+The first step to enable a specific name per environment is again adding a **User-Defined** setting. So go ahead and create a new user defined setting. Call it for instance ***CustomProductName***. Now for each configuration, set a specific name. In our example app we did the following:
 
 ```
 //AdHoc
@@ -160,7 +160,7 @@ To give each environment its own icon, we will use the asset catalog which is cr
 
 > We assume you use Xcode 5+. Older Xcode versions did not have the asset system yet. If you are still on an older version of Xcode, you can change the app icon per environment using your project's info.plist file. Look for the **Icon files** key.
 
-We will need 2 extra App Icon sets. So in the **Editor** menu, click **New App Icon**. Rename the newly created set to ***AppIcon-Debug*** and drag and drop your debug specific icons in the correct placeholders. Repeat this step, but this time call the set ***AppIcon-AdHoc*** and place your ad-hoc specific icons in the correct placeholders. The last step is to just rename the default create app icon set to ***AppIcon-Release***. If not already set, again drag and drop the appropriate icon files inside this side.
+We will need 2 extra App Icon sets. So in the **Editor** menu, click **New App Icon**. Rename the newly created set to ***AppIcon-Debug*** and drag and drop your debug specific icons in the correct placeholders. Repeat this step, but this time call the set ***AppIcon-AdHoc*** and place your ad-hoc specific icons in the correct placeholders. The last step is to just rename the default create app icon set to ***AppIcon-Release***. If not already set, again drag and drop the appropriate icon files inside this set.
 
 > Find more info on assets here: https://developer.apple.com/library/ios/recipes/xcode_help-image_catalog-1.0/Recipe.html
 
@@ -172,6 +172,7 @@ AppIcon-${CONFIGURATION}
 
 That should do the trick. Now your app is completely setup to use the advantages of the different configurations. The only thing you need to do is test it out. Run the app within Xcode to see the Debug configuration. Create an archive while the AdHoc scheme is active to create an ad-hoc distribution. Deploy it on a provisioned device, to see the AdHoc setup at play. Finally, create an archive with the regular scheme activated to make the Release configuration work. Enjoy!
 
+> Instead of deploying the app, you can also just check the organizer after building the respective archives. Normally, the archives open up after building an archive. If not, you can open the organizer via the **Window** menu. If everything is configured correctly, the bundle name, identifier and app icon are shown here as well.
 
 ## Bonus: feature-switching with macros
 To enable certain pieces of code depending on the current environment, you can use **Preprocessor Macros**. As you might already now or could have guessed, you can setup these macros in you target's **Build Settings**. Open your build settings and locate the **Preprocessor Macros** within the **Apple LLVM 5.0 - Preprocessing** section. Now for each configuration add the following:
