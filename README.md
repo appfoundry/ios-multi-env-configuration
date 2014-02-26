@@ -102,7 +102,7 @@ To use the configuration file in this example the process is a matter of using t
 
 > The code snippet above is taken from the provided example project. Check out the ***DRYShowConfigurationViewController*** 
 
-Remember that you can also easily read your application ***info.plist*** file.
+Remember that you can also easily read your application ***info.plist*** file. Especially handy for showing information in an about screen or the like.
 
 ```Objective-C
 NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
