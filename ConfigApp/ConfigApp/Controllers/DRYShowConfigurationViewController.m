@@ -67,9 +67,10 @@
 }
     
 - (NSString *) readValueFromConfigurationFile {
-    NSString *configPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
-    NSDictionary *configDictionary = [NSDictionary dictionaryWithContentsOfFile:configPath];
-    return configDictionary[@"configParameter"];
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:@"Configuration" ofType:@"plist"];
+    NSDictionary *config = [NSDictionary dictionaryWithContentsOfFile:path];
+    return config[@"configParameter"];
 }
     
 - (void)didReceiveMemoryWarning {
